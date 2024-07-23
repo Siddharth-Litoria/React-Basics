@@ -6,25 +6,19 @@
 
 // root.appendChild(heading);
 
-const head = React.createElement(
-  "h1",
-  { id: "heading", xyz: "cbn" },
-  "hello world "
-);
-const head2 = React.createElement(
-  "h2",
-  { id: "headin2", xyz: "cb2" },
-  "heloo world 1"
-);
-const head3 = React.createElement("h3", { id: "headin3", xyz: "cb2" }, "hello world 3");
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [head, head2, head3]),
-  React.createElement("div", { id: "child" }, [head, head2]),
-]);
-console.log(parent);
+import React from "react";
+import ReactDOM from "react-dom";
 
+const Heading2 = () => <h2>Hello boy h2</h2>;
+
+const Heading = () => (
+  <div>
+    <Heading2 />
+    <h1>Hello boy</h1>
+  </div>
+);
 //JSX
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<Heading />);
